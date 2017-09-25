@@ -13,6 +13,34 @@
           "Id": 200000
         }
       ]
+    },
+    {
+      "FirstWeark": "F014",
+      "SecondWeark": "S010",
+      "Restrictions": [
+        {
+          "Type": "G",
+          "Id": 100000
+        },
+        {
+          "Type": "M",
+          "Id": 200000
+        }
+      ]
+    },
+    {
+      "FirstWeark": "S009",
+      "SecondWeark": "S011",
+      "Restrictions": [
+        {
+          "Type": "G",
+          "Id": 100000
+        },
+        {
+          "Type": "M",
+          "Id": 200000
+        }
+      ]
     }
   ],
   "WearksStocks": [
@@ -25,14 +53,13 @@
       "Reserve": 1
     },
     {
-      "Weark": "F014",
+      "Weark": "F015",
       "Material": 11100000,
       "SiteMaterial": 200000,
       "MaterialType": 100000,
       "Available": 5,
       "Reserve": 1
     },
-
   ],
   "WearksDepth": [
     {
@@ -40,9 +67,8 @@
       "Deep": 3
     },
     {
-      "Weark": "F015",
+      "Weark": "S009",
       "Deep": 4
     }
-
   ]
 }

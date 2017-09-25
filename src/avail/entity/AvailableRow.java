@@ -5,12 +5,12 @@ package avail.entity;
  */
 public class AvailableRow {
 
-    public String weark;
-    public Long materialId;
-    public Long siteMaterialId;
-    public Long materialTypeId;
-    public Long available;
-    public Long reserve;
+    private String weark;
+    private Long materialId;
+    private Long siteMaterialId;
+    private Long materialTypeId;
+    private Long available;
+    private Long reserve;
 
     public AvailableRow(String weark, Long materialId, Long siteMaterialId, Long materialTypeId, Long available, Long reserve) {
         this.weark = weark;

@@ -5,8 +5,8 @@ package avail.entity;
  */
 public class Restriction {
 
-    public String type;
-    public Long id;
+    private String type;
+    private Long id;
 
     public Restriction(String type, Long id) {
         this.type = type;

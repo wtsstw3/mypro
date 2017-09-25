@@ -15,10 +15,20 @@ public class AvailableAlgo {
         String fileName = "C:\\work\\mine\\src\\simple\\testfiles\\Test.json";
         ArrayList<AvailableRow> availableTable = new ArrayList<>();
         Map<String, Long> wearksDeepthList = new HashMap<>();
-        Map<String, WearkLink> wearksLinksMap = new HashMap<>();
+        Map<String, ArrayList<WearkLink>> wearksLinksMap = new HashMap<>();
         TestJsonParser testJsonParser = new TestJsonParser();
         testJsonParser.parseTestJson(fileName, availableTable, wearksDeepthList, wearksLinksMap);
         int a = 1;
+        availableTable.forEach(item -> {
+            String currentWeark = item.getWeark();
+            Long depth = wearksDeepthList.get(currentWeark);
+            while (depth>0) {
+                //Here could be your recursion
+                //wearksLinksMap.get(currentWeark);
+                depth--;
+            }
+        });
+
     }
 
 }

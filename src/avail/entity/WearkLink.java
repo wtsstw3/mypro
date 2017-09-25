@@ -7,8 +7,8 @@ import java.util.ArrayList;
  */
 public class WearkLink {
 
-    ArrayList<Restriction> restrictions;
-    String targetWeark;
+    private String targetWeark;
+    private ArrayList<Restriction> restrictions;
 
     public WearkLink(String targetWeark,ArrayList<Restriction> restrictions) {
         this.restrictions = restrictions;

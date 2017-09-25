@@ -22,12 +22,14 @@ public class TestJsonParser {
         String fileName = "C:\\work\\mine\\src\\simple\\testfiles\\Test.json";
         ArrayList<AvailableRow> availableTable = new ArrayList<>();
         Map<String, Long> wearksDeepthList = new HashMap<>();
-        Map<String, WearkLink> wearksLinksMap = new HashMap<>();
+        Map<String, ArrayList<WearkLink>> wearksLinksMap = new HashMap<>();
         TestJsonParser testJsonParser = new TestJsonParser();
         testJsonParser.parseTestJson(fileName, availableTable, wearksDeepthList, wearksLinksMap);
     }
 
-    public static void parseTestJson(String fileName, ArrayList<AvailableRow> availableTable, Map<String, Long> wearksDeepthList, Map<String, WearkLink> wearksLinksMap) throws IOException, ParseException {
+    public void parseTestJson(String fileName, ArrayList<AvailableRow> availableTable,
+                              Map<String, Long> wearksDeepthList,
+                              Map<String, ArrayList<WearkLink>> wearksLinksMap) throws IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
 
         JSONObject json = (JSONObject) jsonParser.parse(new FileReader(fileName));
@@ -56,11 +58,16 @@ public class TestJsonParser {
             JSONArray restrictionsJSON = (JSONArray) ((JSONObject) item).get("Restrictions");
             restrictionsJSON.forEach(restriction -> {
                 String type = (String) ((JSONObject) item).get("Type");
-                ;
                 Long id = (Long) ((JSONObject) item).get("Id");
                 restrictions.add(new Restriction(type, id));
             });
-            wearksLinksMap.put(firstWeark, new WearkLink(secondWeark, restrictions));
+            if(wearksLinksMap.get(firstWeark)!= null) {
+                wearksLinksMap.get(firstWeark).add(new WearkLink(secondWeark, restrictions));
+            } else {
+                ArrayList<WearkLink> linksArray = new ArrayList<>();
+                linksArray.add(new WearkLink(secondWeark, restrictions));
+                wearksLinksMap.put(firstWeark, linksArray);
+            }
         });
     }
 
