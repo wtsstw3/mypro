@@ -1,8 +1,5 @@
 package avail.dto;
 
-/**
- * Created by Black on 25.09.2017.
- */
 public class Factory {
     private int id;
 

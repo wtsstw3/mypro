@@ -10,9 +10,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * Created by Black on 25.09.2017.
- */
 public class AvailableAlgo {
     public static void main (String args []) {
         System. out. println ("Белые белые дни");

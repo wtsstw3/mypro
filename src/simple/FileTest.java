@@ -1,4 +1,4 @@
-package com.company;
+package simple;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -7,9 +7,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Created by Vasilii Minenko on 5/22/17.
- */
 public class FileTest {
     public void runCreateFileTest (){
         Date date = new Date();

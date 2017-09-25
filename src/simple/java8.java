@@ -1,10 +1,7 @@
-package com.company;
+package simple;
 
 import java.util.concurrent.ForkJoinPool;
 
-/**
- * Created by Vasilii Minenko on 9/8/17.
- */
 public class java8 {
    static class Person {
         String name;

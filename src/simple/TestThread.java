@@ -1,6 +1,6 @@
-package com.company;
+package simple;
 
-public class Main {
+public class TestThread {
 
     public static void main(String[] args) {
         FileTest fileTest = new FileTest();

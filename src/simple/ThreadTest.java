@@ -1,4 +1,4 @@
-package com.company;
+package simple;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,9 +7,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-/**
- * Created by Vasilii Minenko on 5/22/17.
- */
 public class ThreadTest {
     private static final long FUTURE_EXECUTION_WAIT_DELAY = 10000L; // in ms
 

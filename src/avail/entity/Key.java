@@ -1,8 +1,5 @@
 package avail.entity;
 
-/**
- * Created by Vasilii Minenko on 9/25/17.
- */
 public class Key {
 
     private final int x;

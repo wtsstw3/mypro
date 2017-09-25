@@ -1,4 +1,4 @@
-package com.company;
+package simple;
 
 
 import java.io.BufferedWriter;
@@ -7,9 +7,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
-/**
- * Created by Vasilii Minenko on 8/8/17.
- */
 public class Generator {
     private static Integer FILE_COUNT_ROW = 1000;
     public static void main(String[] args) {
