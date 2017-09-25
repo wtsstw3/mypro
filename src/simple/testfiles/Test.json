@@ -1,0 +1,48 @@
+{
+  "WearksGraph": [
+    {
+      "FirstWeark": "F014",
+      "SecondWeark": "S009",
+      "Restrictions": [
+        {
+          "Type": "G",
+          "Id": 100000
+        },
+        {
+          "Type": "M",
+          "Id": 200000
+        }
+      ]
+    }
+  ],
+  "WearksStocks": [
+    {
+      "Weark": "F014",
+      "Material": 11100000,
+      "SiteMaterial": 200000,
+      "MaterialType": 100000,
+      "Available": 5,
+      "Reserve": 1
+    },
+    {
+      "Weark": "F014",
+      "Material": 11100000,
+      "SiteMaterial": 200000,
+      "MaterialType": 100000,
+      "Available": 5,
+      "Reserve": 1
+    },
+
+  ],
+  "WearksDepth": [
+    {
+      "Weark": "F014",
+      "Deep": 3
+    },
+    {
+      "Weark": "F015",
+      "Deep": 4
+    }
+
+  ]
+}
