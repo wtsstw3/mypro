@@ -5,68 +5,68 @@ package avail.entity;
  */
 public class AvailableRow {
 
-    private String weark;
-    private Long materialId;
-    private Long siteMaterialId;
-    private Long materialTypeId;
-    private Long available;
-    private Long reserve;
+    private String shopId;
+    private Long goodId;
+    private Long sapGoodId;
+    private Long sapMaterialTypeId;
+    private Long availableCount;
+    private Long reserveCount;
 
-    public AvailableRow(String weark, Long materialId, Long siteMaterialId, Long materialTypeId, Long available, Long reserve) {
-        this.weark = weark;
-        this.materialId = materialId;
-        this.siteMaterialId = siteMaterialId;
-        this.materialTypeId = materialTypeId;
-        this.available = available;
-        this.reserve = reserve;
+    public AvailableRow(String shopId, Long goodId, Long sapGoodId, Long sapMaterialTypeId, Long availableCount, Long reserveCount) {
+        this.shopId = shopId;
+        this.goodId = goodId;
+        this.sapGoodId = sapGoodId;
+        this.sapMaterialTypeId = sapMaterialTypeId;
+        this.availableCount = availableCount;
+        this.reserveCount = reserveCount;
     }
 
-    public String getWeark() {
-        return weark;
+    public String getShopId() {
+        return shopId;
     }
 
-    public void setWeark(String weark) {
-        this.weark = weark;
+    public void setShopId(String shopId) {
+        this.shopId = shopId;
     }
 
-    public Long getMaterialId() {
-        return materialId;
+    public Long getSapGoodId() {
+        return sapGoodId;
     }
 
-    public void setMaterialId(Long materialId) {
-        this.materialId = materialId;
+    public void setSapGoodId(Long sapGoodId) {
+        this.sapGoodId = sapGoodId;
     }
 
-    public Long getSiteMaterialId() {
-        return siteMaterialId;
+    public Long getGoodId() {
+        return goodId;
     }
 
-    public void setSiteMaterialId(Long siteMaterialId) {
-        this.siteMaterialId = siteMaterialId;
+    public void setGoodId(Long goodId) {
+        this.goodId = goodId;
     }
 
-    public Long getMaterialTypeId() {
-        return materialTypeId;
+    public Long getSapMaterialTypeId() {
+        return sapMaterialTypeId;
     }
 
-    public void setMaterialTypeId(Long materialTypeId) {
-        this.materialTypeId = materialTypeId;
+    public void setSapMaterialTypeId(Long sapMaterialTypeId) {
+        this.sapMaterialTypeId = sapMaterialTypeId;
     }
 
-    public Long getAvailable() {
-        return available;
+    public Long getAvailableCount() {
+        return availableCount;
     }
 
-    public void setAvailable(Long available) {
-        this.available = available;
+    public void setAvailableCount(Long availableCount) {
+        this.availableCount = availableCount;
     }
 
-    public Long getReserve() {
-        return reserve;
+    public Long getReserveCount() {
+        return reserveCount;
     }
 
-    public void setReserve(Long reserve) {
-        this.reserve = reserve;
+    public void setReserveCount(Long reserveCount) {
+        this.reserveCount = reserveCount;
     }
 
 

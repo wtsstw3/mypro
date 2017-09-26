@@ -1,8 +1,7 @@
 package simple;
 
 import avail.entity.AvailableRow;
-import avail.entity.Restriction;
-import avail.entity.WearkLink;
+import avail.entity.WearkInfoRow;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -10,9 +9,7 @@ import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Black on 26.09.2017.
@@ -22,14 +19,14 @@ public class TestJsonParser {
         String fileName = "C:\\work\\mine\\src\\simple\\testfiles\\Test.json";
         ArrayList<AvailableRow> availableTable = new ArrayList<>();
         Map<String, Long> wearksDeepthList = new HashMap<>();
-        Map<String, ArrayList<WearkLink>> wearksLinksMap = new HashMap<>();
+        Map<String, ArrayList<WearkInfoRow>> wearksLinksMap = new HashMap<>();
         TestJsonParser testJsonParser = new TestJsonParser();
         testJsonParser.parseTestJson(fileName, availableTable, wearksDeepthList, wearksLinksMap);
     }
 
     public void parseTestJson(String fileName, ArrayList<AvailableRow> availableTable,
                               Map<String, Long> wearksDeepthList,
-                              Map<String, ArrayList<WearkLink>> wearksLinksMap) throws IOException, ParseException {
+                              Map<String, ArrayList<WearkInfoRow>> wearksLinksMap) throws IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
 
         JSONObject json = (JSONObject) jsonParser.parse(new FileReader(fileName));
@@ -54,18 +51,18 @@ public class TestJsonParser {
         ((JSONArray) json.get("WearksGraph")).forEach(item -> {
             String firstWeark = (String) ((JSONObject) item).get("FirstWeark");
             String secondWeark = (String) ((JSONObject) item).get("SecondWeark");
-            ArrayList<Restriction> restrictions = new ArrayList<>();
+            Map<String, Set<Long>> restrictions = new HashMap<>();
             JSONArray restrictionsJSON = (JSONArray) ((JSONObject) item).get("Restrictions");
             restrictionsJSON.forEach(restriction -> {
-                String type = (String) ((JSONObject) item).get("Type");
-                Long id = (Long) ((JSONObject) item).get("Id");
-                restrictions.add(new Restriction(type, id));
+                String type = (String) ((JSONObject) restriction).get("Type");
+                ArrayList<Long> ids = (JSONArray) ((JSONObject) restriction).get("Value");
+                restrictions.put(type,new HashSet<>(ids));
             });
             if(wearksLinksMap.get(firstWeark)!= null) {
-                wearksLinksMap.get(firstWeark).add(new WearkLink(secondWeark, restrictions));
+                wearksLinksMap.get(firstWeark).add(new WearkInfoRow(secondWeark, restrictions));
             } else {
-                ArrayList<WearkLink> linksArray = new ArrayList<>();
-                linksArray.add(new WearkLink(secondWeark, restrictions));
+                ArrayList<WearkInfoRow> linksArray = new ArrayList<>();
+                linksArray.add(new WearkInfoRow(secondWeark, restrictions));
                 wearksLinksMap.put(firstWeark, linksArray);
             }
         });

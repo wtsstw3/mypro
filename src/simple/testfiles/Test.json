@@ -6,11 +6,19 @@
       "Restrictions": [
         {
           "Type": "G",
-          "Id": 100000
+          "Value": [
+            100000,
+            20000,
+            30000
+          ]
         },
         {
           "Type": "M",
-          "Id": 200000
+          "Value": [
+            100000,
+            20000,
+            30000
+          ]
         }
       ]
     },
@@ -20,11 +28,19 @@
       "Restrictions": [
         {
           "Type": "G",
-          "Id": 100000
+          "Value": [
+            100000,
+            20000,
+            30000
+          ]
         },
         {
           "Type": "M",
-          "Id": 200000
+          "Value": [
+            100000,
+            20000,
+            30000
+          ]
         }
       ]
     },
@@ -34,11 +50,19 @@
       "Restrictions": [
         {
           "Type": "G",
-          "Id": 100000
+          "Value": [
+            100000,
+            20000,
+            30000
+          ]
         },
         {
           "Type": "M",
-          "Id": 200000
+          "Value": [
+            100000,
+            20000,
+            30000
+          ]
         }
       ]
     }
@@ -51,15 +75,7 @@
       "MaterialType": 100000,
       "Available": 5,
       "Reserve": 1
-    },
-    {
-      "Weark": "F015",
-      "Material": 11100000,
-      "SiteMaterial": 200000,
-      "MaterialType": 100000,
-      "Available": 5,
-      "Reserve": 1
-    },
+    }
   ],
   "WearksDepth": [
     {
