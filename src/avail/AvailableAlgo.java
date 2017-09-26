@@ -1,6 +1,8 @@
 package avail;
 
 import avail.entity.AvailableRow;
+import avail.entity.DeliveryRow;
+import avail.entity.ResultAvailableRow;
 import avail.entity.WearkInfoRow;
 import org.json.simple.parser.ParseException;
 import simple.TestJsonParser;
@@ -13,6 +15,8 @@ public class AvailableAlgo {
         final String dir = System.getProperty("user.dir");
         String fileName = "src/simple/testfiles/Test.json";
         ArrayList<AvailableRow> availableTable = new ArrayList<>();
+        ArrayList<DeliveryRow> deliveryTable = new ArrayList<>();
+        ArrayList<ResultAvailableRow> resultAvailableTable = new ArrayList<>();
         Map<String, Long> wearksDeepthList = new HashMap<>();
         Map<String, ArrayList<WearkInfoRow>> wearksLinksMap = new HashMap<>();
         TestJsonParser testJsonParser = new TestJsonParser();
@@ -25,7 +29,15 @@ public class AvailableAlgo {
                 depth = 3L;
             }
             getChildsForWeark(depth, item.getSapGoodId(), item.getSapMaterialTypeId(), currentWeark, wearksList, wearksLinksMap);
+            wearksList.remove(currentWeark);
             System.out.println(wearksList);
+            DeliveryRow wearkInfoRow = new DeliveryRow(item.getShopId(), item.getGoodId(), wearksList, wearksList);
+            deliveryTable.add(wearkInfoRow);
+            for (String weark : wearksList) {
+                ResultAvailableRow resultAvailableRow = new ResultAvailableRow(weark, item.getGoodId(), 0L, item.getReserveCount(), item.getAvailableCount());
+                resultAvailableTable.add(resultAvailableRow);
+            }
+
 
         });
     }

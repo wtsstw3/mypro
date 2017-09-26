@@ -7,7 +7,7 @@
         {
           "Type": "G",
           "Value": [
-            100000,
+            1002000,
             20000,
             30000
           ]
@@ -70,6 +70,14 @@
   "WearksStocks": [
     {
       "Weark": "F014",
+      "Material": 11100000,
+      "SiteMaterial": 200000,
+      "MaterialType": 100000,
+      "Available": 5,
+      "Reserve": 1
+    },
+    {
+      "Weark": "F015",
       "Material": 11100000,
       "SiteMaterial": 200000,
       "MaterialType": 100000,

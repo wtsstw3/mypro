@@ -1,45 +1,53 @@
 package avail.entity;
 
-import java.util.ArrayList;
+import java.util.Set;
 
 /**
  * Created by Vasilii Minenko on 9/26/17.
  */
 public class DeliveryRow {
-    int shopId;
-    int goodId;
-    ArrayList<String> deliveryShops;
-    ArrayList<String> deliveryCities;
+    String shopId;
+    Long goodId;
+    Set<String> deliveryShops;
+    Set<String> deliveryCities;
 
-    public ArrayList<String> getDeliveryCities() {
-        return deliveryCities;
-    }
-
-    public void setDeliveryCities(ArrayList<String> deliveryCities) {
+    public DeliveryRow(String shopId, Long goodId, Set<String> deliveryShops, Set<String> deliveryCities) {
+        this.shopId = shopId;
+        this.goodId = goodId;
+        this.deliveryShops = deliveryShops;
         this.deliveryCities = deliveryCities;
     }
 
-    public int getShopId() {
+
+    public Set<String> getDeliveryCities() {
+        return deliveryCities;
+    }
+
+    public void setDeliveryCities(Set<String> deliveryCities) {
+        this.deliveryCities = deliveryCities;
+    }
+
+    public String getShopId() {
         return shopId;
     }
 
-    public void setShopId(int shopId) {
+    public void setShopId(String shopId) {
         this.shopId = shopId;
     }
 
-    public int getGoodId() {
+    public Long getGoodId() {
         return goodId;
     }
 
-    public void setGoodId(int goodId) {
+    public void setGoodId(Long goodId) {
         this.goodId = goodId;
     }
 
-    public ArrayList<String> getDeliveryShops() {
+    public Set<String> getDeliveryShops() {
         return deliveryShops;
     }
 
-    public void setDeliveryShops(ArrayList<String> deliveryShops) {
+    public void setDeliveryShops(Set<String> deliveryShops) {
         this.deliveryShops = deliveryShops;
     }
 }
