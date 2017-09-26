@@ -24,16 +24,14 @@ public class AvailableAlgo {
             if (depth == null) {
                 depth = 3L;
             }
-            getChildsForWeark(depth, item.getSapGoodId(), item.getSapMaterialTypeId(), currentWeark, wearksList, availableTable, wearksDeepthList, wearksLinksMap);
+            getChildsForWeark(depth, item.getSapGoodId(), item.getSapMaterialTypeId(), currentWeark, wearksList, wearksLinksMap);
             System.out.println(wearksList);
 
         });
     }
 
 
-    public static void getChildsForWeark(Long depth, Long currentMaterialId, Long currentMaterialType, String currentWeark, Set<String> wearksList, ArrayList<AvailableRow> availableTable,
-                                         Map<String, Long> wearksDeepthList,
-                                         Map<String, ArrayList<WearkInfoRow>> wearksLinksMap) {
+    public static void getChildsForWeark(Long depth, Long currentMaterialId, Long currentMaterialType, String currentWeark, Set<String> wearksList, Map<String, ArrayList<WearkInfoRow>> wearksLinksMap) {
         wearksList.add(currentWeark);
         if (depth > 1 && wearksLinksMap.get(currentWeark) != null) {
             wearksLinksMap.get(currentWeark).forEach(item -> {
@@ -41,11 +39,11 @@ public class AvailableAlgo {
                 Map<String, Set<Long>> restrictions = item.getRestrictions();
                 Set<Long> materialRestrictions = restrictions.get("M");
                 Set<Long> typeRestrictions = restrictions.get("G");
-                if(materialRestrictions.contains(currentMaterialId) || typeRestrictions.contains(currentMaterialType)) {
+                if (materialRestrictions.contains(currentMaterialId) || typeRestrictions.contains(currentMaterialType)) {
                     return;
                 } else {
                     wearksList.add(item.getTargetWeark());
-                    getChildsForWeark(depth - 1, currentMaterialId, currentMaterialType, item.getTargetWeark(), wearksList, availableTable, wearksDeepthList, wearksLinksMap);
+                    getChildsForWeark(depth - 1, currentMaterialId, currentMaterialType, item.getTargetWeark(), wearksList, wearksLinksMap);
                 }
             });
         }
