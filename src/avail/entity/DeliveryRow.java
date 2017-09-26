@@ -2,9 +2,6 @@ package avail.entity;
 
 import java.util.Set;
 
-/**
- * Created by Vasilii Minenko on 9/26/17.
- */
 public class DeliveryRow {
     String shopId;
     Long goodId;
